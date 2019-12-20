@@ -4,7 +4,11 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./lib",
-    "lib": ["es2015", "es2016"],
+    "lib": [
+      "es2015",
+      "es2016",
+      "dom"
+    ],
     "strict": true
   },
   "include": ["src"],
