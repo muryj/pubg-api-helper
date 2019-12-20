@@ -3,6 +3,14 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": true,
+    "rules": {
+      "variable-name": [
+        true,
+        "ban-keywords",
+        "check-format",
+        "allow-leading-underscore"
+      ]
+    },
     "outDir": "./lib",
     "lib": [
       "es2015",
