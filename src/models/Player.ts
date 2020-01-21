@@ -7,7 +7,7 @@ interface Attributes {
   patchVersion: string;
   titleId: string;
 }
-interface typeVariant<T> {
+interface TypeVariant<T> {
   data: T;
 }
 interface MatchList {
@@ -15,8 +15,8 @@ interface MatchList {
   type: string;
 }
 interface Relationships {
-  assets: typeVariant<object>;
-  matches: typeVariant<MatchList[]>;
+  assets: TypeVariant<object>;
+  matches: TypeVariant<MatchList[]>;
 }
 interface Links {
   schema: string;

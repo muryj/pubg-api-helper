@@ -1,5 +1,5 @@
-import { Match } from './Match';
 import { Asset } from './Asset';
+import { Match } from './Match';
 import { Participant } from './Participant';
 import { Roster } from './Roster';
 
@@ -7,9 +7,9 @@ interface Links {
   self: string;
 }
 
-export interface Matches {
+export interface IMatch {
   data: Match;
-  included: (Asset | Participant | Roster)[];
+  included: Array<Asset | Participant | Roster>;
   links: Links;
   meta: object;
 }

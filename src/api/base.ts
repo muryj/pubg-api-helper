@@ -1,4 +1,4 @@
-import { Platform, GameMode, PlayerObject } from '../models';
+import { GameMode, IMatch, Platform } from '../models';
 export class APIHelper {
   private _apiKey: string;
   private _platform: Platform;
@@ -15,11 +15,11 @@ export class APIHelper {
       },
     }).then(response => response.json());
   }
-  public playerInfo(playerName: string): Promise<PlayerObject> {
-    return this.baseRequest<PlayerObject>(`players?filter[playerNames]=${playerName}`);
+  public playerInfo(playerName: string): object {
+    return this.baseRequest(`players?filter[playerNames]=${playerName}`);
   }
-  public matchInfo(matchID: string): object {
-    return this.baseRequest(`matches/${matchID}`);
+  public matchInfo(matchID: string): Promise<IMatch> {
+    return this.baseRequest<IMatch>(`matches/${matchID}`);
   }
   public allSeasons(): object {
     return this.baseRequest('seasons');
