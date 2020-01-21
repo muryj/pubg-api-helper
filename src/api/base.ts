@@ -8,7 +8,6 @@ export class APIHelper {
   }
   public baseRequest<T>(params: string): Promise<T> {
     return fetch(`https://api.playbattlegrounds.com/shards/${this._platform}/${params}`, {
-      method: 'GET',
       headers: {
         Authorization: `Bearer ${this._apiKey}`,
         Accept: 'application/vnd.api+json',

@@ -1,32 +1,11 @@
-enum GameMode {
-  DUO = 'duo',
-  DUO_FPP = 'duo-fpp',
-  SOLO = 'solo',
-  SOLO_FPP = 'solo-fpp',
-  SQUAD = 'squad',
-  SQUAD_FPP = 'squad-fpp',
-}
-enum MapName {
-  DESERT_MAIN = 'Desert_Main',
-  ERANGEL_MAIN = 'Erangel_Main',
-  SAVAGE_MAIN = 'Savage_Main',
-  RANGE_MAIN = 'Range_Main',
-  DIHOROTOK_MAIN = 'DihorOtok_Main',
-  BALTIC_MAIN = 'Baltic_Main',
-}
-enum Season {
-  CLOSED = 'closed',
-  PREPARE = 'prepare',
-  PROGRESS = 'progress',
-}
 interface Attributes {
   createdAt: string;
   duration: number;
-  gameMode: GameMode;
-  mapName: MapName;
+  gameMode: string;
+  mapName: string;
   isCustomMatch: boolean;
   patchVersion: string;
-  seasonState: Season;
+  seasonState: string;
   shardId: string;
   stats: object;
   tags: object;

@@ -1,16 +1,9 @@
-enum DeathType {
-  ALIVE = 'alive',
-  BYPLAYER = 'byplayer',
-  BYZONE = 'byzone',
-  SUICIDE = 'suicide',
-  LOGOUT = 'logout',
-}
 interface Stats {
   DBNOs: number;
   assists: number;
   boosts: number;
   damageDealt: number;
-  deathType: DeathType;
+  deathType: string;
   headshotKills: number;
   heals: number;
   killPlace: number;
