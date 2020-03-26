@@ -23,7 +23,7 @@ interface Links {
   self: string;
 }
 
-export interface PlayerObject {
+export interface IPlayerObject {
   type: string;
   id: string;
   attributes: Attributes;

@@ -1,4 +1,4 @@
-import { GameMode, IMatch, Platform } from '../models';
+import { GameMode, IMatch, IPlayerObject, Platform } from '../models';
 export class APIHelper {
   private _apiKey: string;
   private _platform: Platform;
@@ -14,8 +14,11 @@ export class APIHelper {
       },
     }).then(response => response.json());
   }
-  public playerInfo(playerName: string): object {
-    return this.baseRequest(`players?filter[playerNames]=${playerName}`);
+  public apiStatus(): object {
+    return fetch('https://api.pubg.com/status');
+  }
+  public playerInfo(playerName: string): Promise<IPlayerObject> {
+    return this.baseRequest<IPlayerObject>(`players?filter[playerNames]=${playerName}`);
   }
   public matchInfo(matchID: string): Promise<IMatch> {
     return this.baseRequest<IMatch>(`matches/${matchID}`);
